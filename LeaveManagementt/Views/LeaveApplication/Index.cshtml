@@ -1,0 +1,76 @@
+﻿
+@model LeaveManagementt.ViewModel.LeaveViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Leave Application</h2>
+
+@using (Html.BeginForm("ApplyLeave", "LeaveApplication"))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.LeaveDetail.Employee_Id, "EmployeeId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.LeaveDetail.Employee_Id, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail.Employee_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+
+            @Html.LabelFor(model => model.LeaveId, "LeaveId", htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @*@Html.DropDownListFor(x => x.LeaveId, new SelectList(Model.Leaves, "LeaveId", "LeaveType"), new { @class = "form-control" })*@
+
+            @if (ViewBag.leaves != null)
+            {
+
+                @Html.DropDownListFor(model => model.LeaveId, ViewBag.leaves as SelectList, "--Leave Type--", htmlAttributes: new { @class = "control-label col-md-2" })
+            }
+        </div>
+        </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LeaveDetail.LeaveDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.LeaveDetail.LeaveDescription, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail.LeaveDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LeaveDetail.FromDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LeaveDetail.FromDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LeaveDetail.FromDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LeaveDetail.ToDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LeaveDetail.ToDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LeaveDetail.ToDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Apply" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+    
+
+}
+
+
