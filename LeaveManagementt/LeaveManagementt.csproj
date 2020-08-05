@@ -190,6 +190,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaveApplicationController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagingDirectorController.cs" />
     <Compile Include="Controllers\SupervisorController.cs" />
@@ -314,6 +315,7 @@
     <Content Include="Views\ManagingDirector\Index.cshtml" />
     <Content Include="Views\Supervisor\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

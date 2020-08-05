@@ -70,8 +70,7 @@ namespace LeaveManagementt.Controllers
 
 
 
-
-
+            
             return RedirectToAction("Index", "Supervisor");
         }
         public ActionResult LeaveRejection()

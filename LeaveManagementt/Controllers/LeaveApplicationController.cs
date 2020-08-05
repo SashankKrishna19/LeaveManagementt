@@ -41,8 +41,12 @@ namespace LeaveManagementt.Controllers
             }
 
             db.SaveChanges();
+            if (leaveDetail.Employee_Id == 2)
 
-            return RedirectToAction("Index", "ManagingDirector");
+                return RedirectToAction("Index", "ManagingDirector");
+
+            else
+                return RedirectToAction("Index", "Supervisor");
         }
     }
 }

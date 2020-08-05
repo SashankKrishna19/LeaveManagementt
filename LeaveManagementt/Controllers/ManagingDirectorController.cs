@@ -32,5 +32,28 @@ namespace LeaveManagementt.Controllers
                      }).ToList();
             return View(query);
         }
+
+        public ActionResult LeaveApproval()
+        {
+            LeaveDetail leave = new LeaveDetail();
+
+            leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
+            leave.LeaveStatus = 2;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "ManagingDirector");
+        }
+        public ActionResult LeaveRejection()
+        {
+            LeaveDetail leave = new LeaveDetail();
+
+
+            leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
+            leave.LeaveStatus = 3;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "ManagingDirector");
+        }
+
     }
 }

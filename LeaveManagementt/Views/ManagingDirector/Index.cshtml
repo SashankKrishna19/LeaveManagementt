@@ -34,8 +34,8 @@
         <td style="padding:10px;">@detail.FromDate</td>
         <td style="padding:10px;">@detail.ToDate</td>
         <td style="padding:10px;">@detail.LeaveDescription</td>
-        <td style="padding:10px;"><input class="StatusChange btn btn-success" type="button" value="Approve" onclick="location.href='@Url.Action("LeaveApproval", "Supervisor")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
-        <td style="padding:10px;"><input class="StatusChange btn btn-danger" type="button" value="Reject" onclick="location.href='@Url.Action("LeaveRejection", "Supervisor")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
+        <td style="padding:10px;"><input class="StatusChange btn btn-success" type="button" value="Approve" onclick="location.href='@Url.Action("LeaveApproval", "ManagingDirector")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
+        <td style="padding:10px;"><input class="StatusChange btn btn-danger" type="button" value="Reject" onclick="location.href='@Url.Action("LeaveRejection", "ManagingDirector")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
     </tr>
         }
 

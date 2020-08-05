@@ -30,11 +30,11 @@ namespace LeaveManagementt.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         
-        public Nullable<System.DateTime> FromDate { get; set; }
+        public System.DateTime FromDate { get; set; }
         [Display(Name = "To Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> ToDate { get; set; }
+        public System.DateTime ToDate { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Leave Leave { get; set; }
