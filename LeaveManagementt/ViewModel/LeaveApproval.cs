@@ -8,7 +8,10 @@ namespace LeaveManagementt.ViewModel
 {
     public class LeaveApproval
     {
-        public LeaveDetail LeaveDetail { get; set; }
-        public IEnumerable<Status> Statuses { get; set; }
+        public string StatusType { get; set; }
+        public string EmployeeName { get; set; }
+        public string LeaveType { get; set; }
     }
+
+
 }

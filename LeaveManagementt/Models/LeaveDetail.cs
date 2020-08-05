@@ -15,22 +15,26 @@ namespace LeaveManagementt.Models
 
     public partial class LeaveDetail
     {
-
+        [Key]
         public int Id { get; set; }
-        public Nullable<int> Employee_Id { get; set; }
+        [Display(Name = "EmpID")]
+        [Required(ErrorMessage = "EmpID is Required")]
+        public int Employee_Id { get; set; }
+        [Display(Name = "Leave Type")]
         public int? TypeOfLeave { get; set; }
+        [Display(Name = "Leave description")]
+        [Required]
         public string LeaveDescription { get; set; }
-        public Nullable<int> LeaveStatus { get; set; }
-
+        public int LeaveStatus { get; set; }
+        [Display(Name = "From Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-
-        public Nullable<System.DateTime> FromDate { get; set; }
+        
+        public System.DateTime FromDate { get; set; }
+        [Display(Name = "To Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-
-
-        public Nullable<System.DateTime> ToDate { get; set; }
+        public System.DateTime ToDate { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Leave Leave { get; set; }

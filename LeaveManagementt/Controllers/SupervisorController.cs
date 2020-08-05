@@ -1,4 +1,5 @@
 ﻿using LeaveManagementt.Models;
+using LeaveManagementt.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
@@ -8,27 +9,47 @@ using System.Web.Mvc;
 
 namespace LeaveManagementt.Controllers
 {
+   
     public class SupervisorController : Controller
     {
+       
         // GET: Supervisor
         LeaveManagementDBEntities1 db = new LeaveManagementDBEntities1();
         public ActionResult Index()
         {
-            var query = from LeaveDetail in db.LeaveDetails
-                        where LeaveDetail.Employee.RoleID.Equals(3)
-                        select  LeaveDetail;
-            return View(query);
+            try
+            {
+                List<LeaveViewModel> query = new List<LeaveViewModel>();
+                query = (from LeaveDetail in db.LeaveDetails
+                         join Employee in db.Employees on LeaveDetail.Employee_Id equals Employee.EmployeeId
+                         join Leave in db.Leaves on LeaveDetail.TypeOfLeave equals Leave.LeaveId
+                         join Status in db.Status on LeaveDetail.LeaveStatus equals Status.StatusId
+                         where LeaveDetail.Employee.RoleID.Equals(3)
+                         select new LeaveViewModel
+                         {
+                             EmployeeName = Employee.EmployeeName,
+                             LeaveType = Leave.LeaveType,
+                             StatusType = Status.StatusType,
+                             FromDate = LeaveDetail.FromDate,
+                             ToDate = LeaveDetail.ToDate,
+                             LeaveDescription = LeaveDetail.LeaveDescription,
+                             LeaveStatus = LeaveDetail.LeaveStatus
+                         }).ToList();
+                return View(query);
+            }
+            catch(Exception ex)
+            {
+                
+            }
 
-            //(from LeaveDetail in db.LeaveDetails
-            // join Employee in db.Employees on LeaveDetail.EmployeeId equals Employee.Id
+            return View();
+            //var query = (from LeaveDetail in db.LeaveDetails
+            // join Employee in db.Employees on LeaveDetail.Employee_Id equals Employee.EmployeeId
 
-            // select new { Employee.EmployeeName, LeaveDetail.LeaveDescription, LeaveDetail.FromDate, LeaveDetail.ToDate });
+            // select new LeaveViewModel{ Employee.EmployeeName, LeaveDetail.LeaveDescription, LeaveDetail.FromDate, LeaveDetail.ToDate });
             //return View(query);
 
-            // SELECT LeaveDetails.EmployeeId,Employee.EmployeeName,Status.StatusType
-            //  ,LeaveDetails.LeaveDescription,LeaveDetails.FromDate, LeaveDetails.ToDate
-            //FROM Employee ,LeaveDetails,Status
-            //WHERE  LeaveDetails.EmployeeId = Employee.Id And LeaveDetails.LeaveStatus = Status.StatusId
+
         }
 
         public ActionResult LeaveApproval()
@@ -56,8 +77,7 @@ namespace LeaveManagementt.Controllers
         public ActionResult LeaveRejection()
         {
             LeaveDetail leave = new LeaveDetail();
-           
-
+            
            
                 leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
                 leave.LeaveStatus = 3;

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LeaveManagementt.Models.LeaveDetail>
+﻿@model IEnumerable<LeaveManagementt.ViewModel.LeaveViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -15,7 +15,8 @@
     <hr />
     <table cellpadding="0" cellspacing="0">
         <tr>
-            <th style="padding:10px;">EmployeeId</th>
+            <th style="padding:10px;">Employee Name</th>
+            <th style="padding:10px;">Leave Type</th>
             <th style="padding:10px;">Leave Status</th>
             <th style="padding:10px;">From Date</th>
             <th style="padding:10px;">To Date</th>
@@ -24,16 +25,17 @@
             <th style="padding:10px;">Rejection</th>
         </tr>
 
-        @foreach (LeaveManagementt.Models.LeaveDetail detail in Model)
+        @foreach(LeaveManagementt.ViewModel.LeaveViewModel detail in Model)
         {
     <tr>
-        <td style="padding:10px;">@detail.Employee_Id</td>
-        <td style="padding:10px;">@detail.LeaveStatus</td>
+        <td style="padding:10px;">@detail.EmployeeName</td>
+        <td style="padding:10px;">@detail.LeaveType</td>
+        <td style="padding:10px;">@detail.StatusType</td>
         <td style="padding:10px;">@detail.FromDate</td>
         <td style="padding:10px;">@detail.ToDate</td>
         <td style="padding:10px;">@detail.LeaveDescription</td>
-        <td style="padding:10px;"><input class="StatusChange" type="button" value="Approve" onclick="location.href='@Url.Action("LeaveApproval", "Supervisor")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
-        <td style="padding:10px;"><input class="StatusChange" type="button" value="Reject" onclick="location.href='@Url.Action("LeaveRejection", "Supervisor")'" @(detail.LeaveStatus == 3 ? "disabled='disabled'" : "" ) /></td>
+        <td style="padding:10px;"><input class="StatusChange btn btn-success" type="button" value="Approve" onclick="location.href='@Url.Action("LeaveApproval", "Supervisor")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
+        <td style="padding:10px;"><input class="StatusChange btn btn-danger" type="button" value="Reject" onclick="location.href='@Url.Action("LeaveRejection", "Supervisor")'" @(detail.LeaveStatus != 1 ? "disabled='disabled'" : "" ) /></td>
     </tr>
         }
 

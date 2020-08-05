@@ -11,7 +11,8 @@ namespace LeaveManagementt.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,23 @@ namespace LeaveManagementt.Models
         }
     
         public int EmployeeId { get; set; }
+        [Display(Name = "Employee Name")]
+        [Required(ErrorMessage = "Employee Name is Required")]
         public string EmployeeName { get; set; }
+        [Display(Name = "Role ID")]
+        [Required(ErrorMessage = "Role ID is Required")]
         public int RoleID { get; set; }
+        [Display(Name = "UserName")]
+        [Required(ErrorMessage = "UserName is Required")]
         public string UserName { get; set; }
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Password is Required")]
         public string Password { get; set; }
+        [Display(Name = "Mail ID")]
+        [Required(ErrorMessage = "MAil ID is Required")]
         public string MailId { get; set; }
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number is Required")]
         public string PhoneNumber { get; set; }
     
         public virtual Role Role { get; set; }

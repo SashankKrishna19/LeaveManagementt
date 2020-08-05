@@ -20,6 +20,18 @@ namespace LeaveManagementt.ViewModel
         public IEnumerable<Employee> Employees { get; set; }
         public int Employee_Id { get; set; }
 
-      
+
+        public string StatusType { get; set; }
+        public string EmployeeName { get; set; }
+        public string LeaveType { get; set; }
+
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
+
+        public string LeaveDescription { get; set; }
+
+        public int LeaveStatus { get; set; }
     }
+
+   
 }

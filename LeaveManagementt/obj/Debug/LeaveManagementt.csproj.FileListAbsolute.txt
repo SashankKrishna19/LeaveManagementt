@@ -51,6 +51,7 @@ C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\roslyn\vbc.rsp
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\roslyn\VBCSCompiler.exe
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Antlr3.Runtime.dll
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\AutoMapper.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\EntityFramework.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\EntityFramework.SqlServer.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Microsoft.AspNet.Identity.Core.dll
@@ -69,7 +70,10 @@ C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Microsoft.Owin
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Newtonsoft.Json.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\Owin.dll
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Net.Http.Formatting.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Helpers.dll
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Http.dll
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Http.WebHost.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Mvc.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Optimization.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Razor.dll
@@ -77,6 +81,10 @@ C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Web
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.WebPages.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.WebPages.Razor.dll
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\WebGrease.dll
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\AutoMapper.xml
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Net.Http.Formatting.xml
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Http.xml
+C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Http.WebHost.xml
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Helpers.xml
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Mvc.xml
 C:\Users\Sasha\Source\Repos\LeaveManagementt\LeaveManagementt\bin\System.Web.Optimization.xml

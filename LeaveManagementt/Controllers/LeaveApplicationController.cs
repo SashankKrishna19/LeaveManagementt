@@ -21,7 +21,14 @@ namespace LeaveManagementt.Controllers
         [HttpPost]
         public ActionResult ApplyLeave(LeaveDetail leaveDetail)
         {
-           
+            //if (!ModelState.IsValid)
+            //{
+            //    var viewModel = new LeaveViewModel
+            //    {
+            //        LeaveDetail = leaveDetail,
+            //        Leaves = db.Leaves.ToList()
+            //    };
+            //}
             db.LeaveDetails.Add(leaveDetail);
             if (leaveDetail.Status == null)
             {
@@ -34,7 +41,7 @@ namespace LeaveManagementt.Controllers
 
             db.SaveChanges();
 
-            return RedirectToAction("Index", "Supervisor");
+            return RedirectToAction("Index", "ManagingDirector");
         }
     }
 }
