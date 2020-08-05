@@ -185,6 +185,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\EmployeesController.cs" />
+    <Compile Include="Controllers\API\SupervisorController.cs" />
+    <Compile Include="Controllers\API\ValuesController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaveApplicationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -233,6 +236,8 @@
     <Compile Include="ViewModel\LeaveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-journal.css" />
+    <Content Include="Content\bootstrap-minty.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -306,12 +311,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\LeaveApplication\Index.cshtml" />
-    <Content Include="Views\Supervisor\Index.cshtml" />
     <Content Include="Views\ManagingDirector\Index.cshtml" />
+    <Content Include="Views\Supervisor\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ApplicationStatus\" />
+    <Folder Include="Views\ValuesApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

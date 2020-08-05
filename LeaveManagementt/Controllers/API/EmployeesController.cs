@@ -31,68 +31,61 @@ namespace LeaveManagementt.Controllers.API
 
             if (employee == null)
                 return NotFound();
-                //throw new HttpResponseException(HttpStatusCode.NotFound);
+            //throw new HttpResponseException(HttpStatusCode.NotFound);
 
             return Ok(Mapper.Map<Employee, EmployeeDto>(employee));
         }
 
-       // // Post/api/Employees
-       // [HttpPost]
-       // public Employee CreateEmployee(Employee employee)
-       // {
-       //     if (!ModelState.IsValid)
-       //         throw new HttpResponseException(HttpStatusCode.BadRequest);
-       //     db.Employees.Add(employee);
-       //     db.SaveChanges();
-       //     return employee;
-       // }
-       // //put /api/Employees/1
-       // [HttpPut]
-       // public void UpdateEmployee(int id, Employee employee)
-       // {
-       //     if (!ModelState.IsValid)
-       //         throw new HttpResponseException(HttpStatusCode.BadRequest);
+        // // Post/api/Employees
+        // [HttpPost]
+        // public Employee CreateEmployee(Employee employee)
+        // {
+        //     if (!ModelState.IsValid)
+        //         throw new HttpResponseException(HttpStatusCode.BadRequest);
+        //     db.Employees.Add(employee);
+        //     db.SaveChanges();
+        //     return employee;
+        // }
+        // //put /api/Employees/1
+        // [HttpPut]
+        // public void UpdateEmployee(int id, Employee employee)
+        // {
+        //     if (!ModelState.IsValid)
+        //         throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-       //     var employeeInDb = db.Employees.SingleOrDefault(c => c.EmployeeId == id);
+        //     var employeeInDb = db.Employees.SingleOrDefault(c => c.EmployeeId == id);
 
-       //     if(employeeInDb == null)
-       //         throw new HttpResponseException(HttpStatusCode.NotFound);
+        //     if(employeeInDb == null)
+        //         throw new HttpResponseException(HttpStatusCode.NotFound);
 
-       //     employeeInDb.EmployeeName = employee.EmployeeName;
-       //     employeeInDb.MailId = employee.MailId;
-       //     employeeInDb.Password = employee.Password;
-       //     employeeInDb.PhoneNumber = employee.PhoneNumber;
-       //     employeeInDb.RoleID = employee.RoleID;
-       //     employeeInDb.UserName = employee.UserName;
+        //     employeeInDb.EmployeeName = employee.EmployeeName;
+        //     employeeInDb.MailId = employee.MailId;
+        //     employeeInDb.Password = employee.Password;
+        //     employeeInDb.PhoneNumber = employee.PhoneNumber;
+        //     employeeInDb.RoleID = employee.RoleID;
+        //     employeeInDb.UserName = employee.UserName;
 
-       //     db.SaveChanges();
-       // }
+        //     db.SaveChanges();
+        // }
 
 
 
-       // // Delete /api/Employee/1
-       // [HttpDelete]
-       //public void DeleteEmployee(int id)
-       // {
-       //     var employeeInDb = db.Employees.SingleOrDefault(m => m.EmployeeId == id);
+        // // Delete /api/Employee/1
+        // [HttpDelete]
+        //public void DeleteEmployee(int id)
+        // {
+        //     var employeeInDb = db.Employees.SingleOrDefault(m => m.EmployeeId == id);
 
-       //     if (employeeInDb == null)
-       //         throw new HttpResponseException(HttpStatusCode.NotFound);
+        //     if (employeeInDb == null)
+        //         throw new HttpResponseException(HttpStatusCode.NotFound);
 
-       //     db.Employees.Remove(employeeInDb);
-       //     db.SaveChanges();
-       // }
+        //     db.Employees.Remove(employeeInDb);
+        //     db.SaveChanges();
+        // }
 
 
     }
 }
-
-
-
-
-
-
-
 
 
 

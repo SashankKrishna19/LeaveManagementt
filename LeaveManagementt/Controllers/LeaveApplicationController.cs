@@ -12,6 +12,7 @@ namespace LeaveManagementt.Controllers
     {
         // GET: LeaveApplication
         LeaveManagementDBEntities1 db = new LeaveManagementDBEntities1();
+
         public ActionResult Index()
         {
             List<Leave> leaves = db.Leaves.ToList();

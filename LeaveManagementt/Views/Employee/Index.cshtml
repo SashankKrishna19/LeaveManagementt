@@ -1,0 +1,74 @@
+﻿@model LeaveManagementt.Models.LeaveManagementDBEntities1
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <header class="top_panel top_panel_style_2 scheme_default">
+
+     
+
+                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</a>
+
+                <a>@Html.ActionLink("LeaveDetails", "Index", "Leave", new { area = "" }, null)</a>
+
+
+    </header>
+
+    <table style="margin-left: 25%; margin-top: 10px; border: 2px solid LightGray;">
+
+        <tr>
+
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+
+            <th>Role</th>
+
+            <th>UserName</th>
+
+            <th>Password</th>
+            <th>MailId</th>
+            <th>PhoneNumber</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Employees)
+
+        {
+<tr>
+    <td>@item.EmployeeId</td>
+
+    <td>@item.EmployeeName </td>
+
+
+
+    <td>@item.Role.Role1</td>
+
+
+    <td>@item.UserName</td>
+
+    <td>@item.Password</td>
+    <td>@item.MailId</td>
+    <td>@item.PhoneNumber</td>
+
+    <td>
+
+        @Html.ActionLink("Details", "Details", new { id = @item.EmployeeId }) 
+
+    </td>
+</tr>}
+
+    </table>
+</body>
+
+</html>
+
+

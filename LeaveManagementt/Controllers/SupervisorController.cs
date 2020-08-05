@@ -9,10 +9,10 @@ using System.Web.Mvc;
 
 namespace LeaveManagementt.Controllers
 {
-   
+
     public class SupervisorController : Controller
     {
-       
+
         // GET: Supervisor
         LeaveManagementDBEntities1 db = new LeaveManagementDBEntities1();
         public ActionResult Index()
@@ -37,9 +37,9 @@ namespace LeaveManagementt.Controllers
                          }).ToList();
                 return View(query);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
             }
 
             return View();
@@ -61,31 +61,31 @@ namespace LeaveManagementt.Controllers
             //    leave.LeaveStatus = 1;
             //}
             //else
-          
-            
-            
-                leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
-                leave.LeaveStatus = 2;
-                db.SaveChanges();
-            
-            
-            
 
 
-            return RedirectToAction("Index","Supervisor");
+
+            leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
+            leave.LeaveStatus = 2;
+            db.SaveChanges();
+
+
+
+
+
+            return RedirectToAction("Index", "Supervisor");
         }
         public ActionResult LeaveRejection()
         {
             LeaveDetail leave = new LeaveDetail();
-            
-           
-                leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
-                leave.LeaveStatus = 3;
-                db.SaveChanges();
-            
-           
-            
-            return RedirectToAction("Index","Supervisor");
+
+
+            leave = db.LeaveDetails.FirstOrDefault(x => x.LeaveStatus == 1);
+            leave.LeaveStatus = 3;
+            db.SaveChanges();
+
+
+
+            return RedirectToAction("Index", "Supervisor");
         }
     }
 }
